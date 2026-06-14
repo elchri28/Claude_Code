@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BHO — Confronto AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="grafici.html" class="attivo">Confronto AI</a>
+  </nav>
+
+  <div class="sezione-grafici">
+
+    <h1 class="titolo-grafici">AI Coding Tools — Confronto</h1>
+
+    <div class="legenda">
+      <span><span class="pallino" style="background:#534AB7"></span>Claude Code</span>
+      <span><span class="pallino" style="background:#1D9E75"></span>Cursor</span>
+      <span><span class="pallino" style="background:#888780"></span>GitHub Copilot</span>
+      <span><span class="pallino" style="background:#EF9F27"></span>Gemini CLI</span>
+      <span><span class="pallino" style="background:#E24B4A"></span>Codex CLI</span>
+    </div>
+
+    <p class="sottotitolo-grafico">SWE-bench Verified — % di bug reali risolti (giugno 2026)</p>
+    <div class="contenitore-grafico">
+      <canvas id="swe" role="img" aria-label="SWE-bench: Claude Code 88.6%, Codex CLI 85%, Gemini CLI 80.6%">Claude Code 88.6%, Codex CLI 85%, Gemini CLI 80.6%.</canvas>
+    </div>
+
+    <p class="sottotitolo-grafico">Terminal-Bench 2.1 — % task completati da terminale (tbench.ai)</p>
+    <div class="contenitore-grafico">
+      <canvas id="terminal" role="img" aria-label="Terminal-Bench: Codex CLI 83.4%, Claude Code 78.9%, Gemini CLI 70.7%">Codex CLI 83.4%, Claude Code 78.9%, Gemini CLI 70.7%.</canvas>
+    </div>
+
+    <p class="sottotitolo-grafico">Prezzo mensile — piano base a pagamento (USD)</p>
+    <div class="contenitore-grafico">
+      <canvas id="price" role="img" aria-label="Prezzi: Gemini CLI gratis, Copilot $10, gli altri $20">Gemini CLI gratis, Copilot $10, Claude Code/Cursor/Codex $20.</canvas>
+    </div>
+
+    <p class="sottotitolo-grafico">Context window — token massimi per sessione</p>
+    <div class="contenitore-grafico">
+      <canvas id="context" role="img" aria-label="Context window: Claude Code e Gemini CLI 1M token">Claude Code e Gemini CLI 1M token, gli altri molto meno.</canvas>
+    </div>
+
+    <div class="box-critico">
+      <p class="box-critico-titolo">⚠ Note critiche su Claude Code</p>
+      <ul>
+        <li>Solo modelli Anthropic — nessun fallback a GPT o Gemini</li>
+        <li>Su Terminal-Bench 2.1 Codex CLI lo batte (83.4% vs 78.9%)</li>
+        <li>SWE-bench Verified è parzialmente contaminato: Opus 4.5 crolla dall'80.9% al 45.9% su dataset mai visti prima (SWE-bench Pro)</li>
+        <li>Piano Max $100–200/mo per uso intensivo — il più costoso della categoria</li>
+        <li>Interfaccia solo da terminale, nessuna GUI — curva di apprendimento ripida</li>
+      </ul>
+    </div>
+
+    <hr class="separatore">
+    <p class="footer">© 2025 BHO — All rights reserved</p>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+</html>

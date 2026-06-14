@@ -1,0 +1,188 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Base ── */
+body {
+  background: #fff;
+  color: #111;
+  font-family: 'Courier New', monospace;
+}
+
+/* ══════════════════════════
+   NAVBAR
+══════════════════════════ */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+nav a {
+  text-decoration: none;
+  color: #a92f2f;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #a92f2f;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ══════════════════════════
+   HOME — titolo animato
+══════════════════════════ */
+.titolo {
+  font-size: 28px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #a92f2f;
+  width: max-content;
+  margin: 0 auto 3rem;
+  max-width: 0;
+  animation:
+    digitazione 3.5s steps(20, end) forwards,
+    lampeggio 0.75s step-end 5,
+    nascondi-cursore 0s 3.75s forwards;
+}
+
+@keyframes digitazione {
+  from { max-width: 0; }
+  to   { max-width: 700px; }
+}
+
+@keyframes lampeggio {
+  from, to { border-color: transparent; }
+  50%      { border-color: #111; }
+}
+
+@keyframes nascondi-cursore {
+  to { border-color: transparent; }
+}
+
+/* ── Blocco testo + immagine ── */
+.contenitore-blocco {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.descrizione {
+  max-width: 80%;      /* era 55%, ora lascia più spazio all'immagine */
+  font-size: 15px;
+  line-height: 1.9;
+  color: #333;
+}
+
+.immagine {
+  display: block;
+  max-width: 60%;      /* immagine un po' più grande */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* ══════════════════════════
+   GRAFICI — titolo
+══════════════════════════ */
+.titolo-grafici {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+/* ── Legenda colori ── */
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.legenda span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #888;
+}
+
+.pallino {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Singolo grafico ── */
+.sottotitolo-grafico {
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+
+.contenitore-grafico {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Box note critiche ── */
+.box-critico {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  background: #fafafa;
+  margin-bottom: 2.5rem;
+}
+
+.box-critico-titolo {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.box-critico ul {
+  font-size: 13px;
+  color: #555;
+  padding-left: 1.2rem;
+  line-height: 2;
+}
+
+/* ══════════════════════════
+   FOOTER (condiviso)
+══════════════════════════ */
+.separatore {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 3rem 0 1.5rem;
+}
+
+.footer {
+  font-size: 12px;
+  color: #bbb;
+  text-align: center;
+}
